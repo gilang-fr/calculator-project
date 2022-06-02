@@ -43,7 +43,7 @@ function getOperator(operator) {
     this.perviousOperand = this.currentOperand;
 
     if(this.operation == '%'){
-        this.currentOperand = Math.sqrt(this.currentOperand);
+        this.currentOperand = this.currentOperand / 100;
     } else {
         this.currentOperand = '';
     }
@@ -66,9 +66,6 @@ function compute() {
             break;
         case '/':
             computation = prev / current;
-            break;
-        case '%':
-            computation = Math.sqrt(prev);
             break;
         default :
             return;
