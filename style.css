@@ -48,7 +48,7 @@ body {
 
 .display .history-value {
     height: 40%;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -59,13 +59,14 @@ body {
 }
 
 .btn-area {
+    height: 70%;
+    margin: 10px auto 20px;
     display: grid;
     grid-template-columns: repeat(4, 65px);
     grid-template-rows: repeat(5, 65px);
-    height: 70%;
     align-content: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 10px;
 }
 
 .btn {
@@ -78,9 +79,8 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: 0.1s;
+    transition: 0.05s;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
