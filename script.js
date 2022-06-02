@@ -17,7 +17,15 @@ function allClear() {
 }
 
 function clear() {
-    this.currentOperand = this.currentOperand.toString().slice(0, -1);
+    if(this.currentOperand != '') {
+        this.currentOperand = this.currentOperand.toString().slice(0, -1);
+    } else {
+        if(this.operation != ''){
+            this.operation = '';
+        }else if(this.currentOperand == ''){
+            this.perviousOperand = this.perviousOperand.toString().slice(0, -1);
+        }
+    }
 }
 
 function getNumber(number) {
@@ -30,9 +38,15 @@ function getOperator(operator) {
     if(this.perviousOperand != '') {
         compute()
     }
+
     this.operation = operator;
     this.perviousOperand = this.currentOperand;
-    this.currentOperand = '';
+
+    if(this.operation == '%'){
+        this.currentOperand = Math.sqrt(this.currentOperand);
+    } else {
+        this.currentOperand = '';
+    }
 }
 
 function compute() {
@@ -52,6 +66,9 @@ function compute() {
             break;
         case '/':
             computation = prev / current;
+            break;
+        case '%':
+            computation = Math.sqrt(prev);
             break;
         default :
             return;
@@ -106,7 +123,8 @@ btnNumber.forEach(function(number){
 
 btnOperator.forEach(function(operator){
     operator.addEventListener('click', function(e){
-        getOperator(e.target.innerText);
+        let op = e.target.innerText;
+        getOperator(op);
         display();
     });
 });
@@ -125,6 +143,7 @@ btnClear.addEventListener('click', function(){
     clear();
     display();
 });
+
 
 
 
