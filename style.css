@@ -9,8 +9,8 @@ body {
 }
 
 .container {
-    max-width: 300px;
-    height: 450px;
+    max-width: 350px;
+    height: 70vh;
     margin: 50px auto;
     border-radius: 20px;
     overflow: hidden;
@@ -23,30 +23,27 @@ body {
 }
 
 .container p {
+    padding: 5px;
     font-size: 20px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    font-weight: 800;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .display {
     width: 85%;
-    height: 15%;
-    margin: 10px auto;
+    height: 20%;
+    margin: 5px auto;
     background-color: #87e1c8;
     border-radius: 5px;
-    padding: 0 5px;
+    padding: 5px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-}
-
-.line {
-    background-color: #eee;
-    height: 1px;
-    width: 90%;
+    word-wrap: none;
+    word-break: break-all;
 }
 
 .display .history-value {
@@ -62,31 +59,28 @@ body {
 }
 
 .btn-area {
-    display: flex;
-    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 65px);
+    grid-template-rows: repeat(5, 65px);
     height: 70%;
-    margin: 0 auto;
-    align-items: center;
+    align-content: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1px;
+    gap: 8px;
 }
 
 .btn {
-    display: flex;
-    width: 20%;
-    height: 48px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 0;
-    font-size: 18px;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    font-size: 1.3rem;
+    font-weight: 600;
     color: #444;
     background-color: #eaebed;
-    box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 0;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: 0.1s;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
@@ -98,15 +92,12 @@ body {
 }
 
 .btn:first-child {
-    width: 47%;
-    border-radius: 10px;
     background-color: #21605d;
     color: #ddd;
 }
 
 .btn:last-child {
-    width: 47%;
     color: #ddd;
     background-color: #123f77;
-    border-radius: 10px;
+    grid-column: span 2;
 }
